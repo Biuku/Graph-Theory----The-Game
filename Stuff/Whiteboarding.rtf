@@ -1,0 +1,134 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red0\green0\blue255;\red155\green0\blue211;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs36\lang9 Graph theory pygame -- Whiteboarding\par
+\b0\fs22 May 2, 2021\b\fs36\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li721\sl276\slmult1\b0\fs22 Want to make robust core code that I can easily modify with different graph algorithms\b\par
+{\pntext\f1\'B7\tab}\b0 Goal is to develop understanding of fundamentals of graph theory:\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li1081\sl276\slmult1 Topoligical sort\par
+{\pntext\f1\'B7\tab}DFS, BFS, Dijkstra\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li721\sl276\slmult1 Want to retain some features of "Matrix Maker"\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li1081\sl276\slmult1 Nodes have clear names, like A:ZZ\par
+{\pntext\f1\'B7\tab}GUI for moving nodes around and creating/destroying edges\par
+{\pntext\f1\'B7\tab}Weighted edges\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li721\sl276\slmult1 But, want to add more features\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li1081\sl276\slmult1 Directed edges\par
+{\pntext\f1\'B7\tab}Can move several nodes at once\par
+{\pntext\f1\'B7\tab}Topological sort\par
+
+\pard\sl276\slmult1\par
+
+\pard\sa200\sl276\slmult1\b Improvements over Matrix Maker\par
+
+\pard\sl276\slmult1\b0 It's been about 8 weeks since starting Matrix Maker, and 6 weeks since finishing it. I've learned since.\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li721\sl276\slmult1 Directed edges from the start\b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li1081\sl276\slmult1\b0 Need to create arrows. Try to do cheap and cheerful -- google heavily.\b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li721\sl276\slmult1\b0 Can edges not be objects? I.e., nodes contain their pygame coordinates and state, and then the master of edges is just an adjacency matrix. Maybe the row headers is the data structure housing the nodes itself.\b\par
+{\pntext\f1\'B7\tab}\b0 Large right side -- have maybe 40% of the space be the working space to the right of the graph area\b\par
+{\pntext\f1\'B7\tab}\b0 Ideally -- but not sure easy to do -- 'plug & play algorithms'.\b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li1081\sl276\slmult1\b0 Ie., a folder with modules: bfs, dfs, dijkstra, etc. \b\par
+{\pntext\f1\'B7\tab}\b0 User can call different algo's\b\par
+{\pntext\f1\'B7\tab}\b0 Aspirational:\b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li1441\sl276\slmult1\b0 Travelling Salesman Problem\b\par
+{\pntext\f1\'B7\tab}\b0 Minimum Spanning Tree ... lot's of Tree stuff\b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li721\sl276\slmult1\b0 For the algo's, the right panel -- let's call it Working Panel -- should show useful things like the stack\b\par
+{\pntext\f1\'B7\tab}\b0 Pre-built graphs -- it can be a pain to build something complex, so helpful to have a module with a few adjacency matrixes\b\par
+{\pntext\f1\'B7\tab}\b0 Simplify\b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li1081\sl276\slmult1\b0 Rather than invent blobs, just skip that -- an edge either exists or doesn't\b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li721\sl276\slmult1\b0 Weights should be much smaller numbers. Maybe divide euler by 10.\par
+{\pntext\f1\'B7\tab}Use Numpy a lot -- simpler and faster\par
+{\pntext\f1\'B7\tab}Idea -- give the nodes negative gravity\b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li1081\sl276\slmult1\b0 The directions and weights are fixed\b\par
+{\pntext\f1\'B7\tab}\b0 But there isn't a given form of the graph. Forcing nodes to repel connected neightbours could be cool. \b\par
+{\pntext\f1\'B7\tab}\b0 Maybe a "Strongly Connected Component" could have a combined gravity to push away from the rest\b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li1441\sl276\slmult1\b0 See (in videos): Bridges and Articulation Points\b\par
+{\pntext\f1\'B7\tab}{\b0\fs12{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=87X57ldq1ok&list=PLDV1Zeh2NRsDGO4--qE8yH72HFL1Km93P&index=3 }}{\fldrslt{https://www.youtube.com/watch?v=87X57ldq1ok&list=PLDV1Zeh2NRsDGO4--qE8yH72HFL1Km93P&index=3\ul0\cf0}}}}\f0\fs22\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li721\sl276\slmult1\b0 I can use relative mouse movements -- should fix jerkyness when moving nodes\b\par
+
+\pard\sl276\slmult1\par
+Prospective requirements\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li721\sl276\slmult1\cf2\b0 Create a node:\b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li1081\sl276\slmult1\b0 Move to spot, press spacebar. \b\par
+{\pntext\f1\'B7\tab}\b0 Reserve mouse buttons for moving and selecting nodes\b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-358\li721\sl276\slmult1\cf0\b0 Create edge:\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-358\li1081\sl276\slmult1 Click on start node\par
+{\pntext\f0 2.\tab}Press 'e'\par
+{\pntext\f0 3.\tab}Click on end node\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li723\sl276\slmult1 Moving a node\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li1083\sl276\slmult1 Click and hold\par
+{\pntext\f1\'B7\tab}Move mouse\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li723\sl276\slmult1 Select several nodes\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li1083\sl276\slmult1 Click and release without moving \par
+
+\pard\sl276\slmult1\par
+\par
+\par
+\par
+\par
+\par
+\par
+\b\fs36 Issues \par
+\b0\fs22\par
+\b How to make an edge primarily outside of Nodes, not using edge objects\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1\b0 To be simpler, I don't want edges to be objects. \b\par
+{\pntext\f1\'B7\tab}\b0 I want edges to just be ... residuals. Lines that the adjacency matrix draws between nodes. \b\par
+{\pntext\f1\'B7\tab}\b0 Challenge -- how to represent edge direction and edge weight\b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li1080\sl276\slmult1\b0 And... be useful when I apply algorithms \b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1\b0 How -- options:\b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li1080\sl276\slmult1\b0 Adjacency Matrix\b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li1440\sl276\slmult1\b0 Naturally captures weights\b\par
+{\pntext\f1\'B7\tab}\b0 To capture direction, could set row index as 'start' and col index as 'end' \b\par
+{\pntext\f1\'B7\tab}\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li1080\sl276\slmult1\b0 Adjacency List \par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li1440\sl276\slmult1 Naturally captures directions\par
+{\pntext\f1\'B7\tab}Seems to handle changes in size better\par
+{\pntext\f1\'B7\tab}To capture weight, could have a dict with items as lists of dictionaries :\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li1800\sl276\slmult1\{ 'A': [\{'B': 105\}, \{'C': 55\}], 'B': [] \}\par
+{\pntext\f1\'B7\tab}Advantage: the keys could double as my data structure for the node objects\par
+{\pntext\f1\'B7\tab}But I think I should use 'ID's' to represent nodes within the lists\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li1440\sl276\slmult1 Assign a string ID to each Node.. e.g., A-ZZ\b\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li1800\sl276\slmult1\b0 From 'make_edge' mode, track start and end nodes for edge\par
+
+\pard\sl276\slmult1\par
+\par
+
+\pard\sa200\sl276\slmult1\par
+}
+ 
