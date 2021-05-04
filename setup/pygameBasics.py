@@ -14,7 +14,6 @@ class PygameBasics:
     def events(self):
         for event in pygame.event.get():
 
-
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if pygame.mouse.get_pressed()[0]:
                     self.left_click_events()

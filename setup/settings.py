@@ -9,18 +9,21 @@ class Settings:
 
 
         self.border_gap = 0.02 ## Gap in % from screen edge to drawn screen border
-        self.working_area_border = 0.67 ## Line demarcating plot area from working area
+        self.working_area_border = 0.71 ## Line demarcating plot area from working area
 
         self.clock = pygame.time.Clock()
-        self.FPS = 250
+        self.FPS = 80
 
         ### Colours
         self.white, self.black = (255, 255, 255), (0, 0, 0)
         self.ultra_light_grey = (240, 240, 240)
         self.light_grey, self.grey, self.dark_grey = (221, 221, 221), (150,150,150), (45, 45, 45)
 
-        self.blue, self.light_blue = (190, 170, 255), (210, 210, 255)
+        self.light_blue, self.blue, self.dark_blue = (210, 210, 255), (190, 170, 255), (0, 0, 54.5)
         self.red, self.light_red = (255, 0, 0), (255, 175, 175)
+        self.green = (119, 221, 119)
+        self.dark_orange = (255, 140, 0)
+        self.yellow = (255, 255, 0)
 
         self.background = (20, 20, 20) #self.black
 
